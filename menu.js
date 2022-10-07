@@ -31,14 +31,30 @@
 */
 
 //CODE HERE
-let pizza ={
-    name: 'pepperoni',
-    price: 10,
+//New Answer:
+let pizza = {
+    name: 'Cheese',
+    price: 10.00,
     category: 'entree',
-    popularity: 60,
-    rating: 90,
-    tags: ['for meat lovers', 'has gluten', 'lots of carbs']
+    popularity: 5,
+    rating: 5,
+    tags: ['cheesy', 'for kids']
 }
+
+
+
+
+
+
+//Original Answer: 
+// let pizza ={
+//     name: 'pepperoni',
+//     price: 10,
+//     category: 'entree',
+//     popularity: 60,
+//     rating: 90,
+//     tags: ['for meat lovers', 'has gluten', 'lots of carbs']
+// }
 
 
 
@@ -62,7 +78,14 @@ console.log(popularityValue)
 */
 
 //CODE HERE
-    //let sndTagValue = pizza.popularity
+//New Answer:
+console.log(pizza.tags[1])
+
+
+
+
+//Original Answer:
+//let sndTagValue = pizza.popularity
     //for(i = 0; i < tags.length; i++){
     
     //}
@@ -75,8 +98,12 @@ console.log(popularityValue)
 */
 
 //CODE HERE
-let pizzaPriceValue = pizza.price
-console.log(pizzaPriceValue)
+let {price} = pizza
+console.log(price)
+
+//Original Answer
+// let pizzaPriceValue = pizza.price
+// console.log(pizzaPriceValue)
 
 
 /*
@@ -87,6 +114,10 @@ console.log(pizzaPriceValue)
 */
 
 //CODE HERE
+//New Answer:
+
+let {category} = pizza
+console.log(category)
 
 
 
@@ -103,44 +134,90 @@ console.log(pizzaPriceValue)
 */
 
 //CODE HERE
-let foodArr = [{
-    name: 'pizza',
-    price: 10,
-    category: 'entree',
-    popularity: 60,
-    rating: 90,
-    tags: ['for meat lovers', 'has gluten', 'lots of carbs']
-},{
-    name: 'noodles',
-    price: 8,
-    category: 'entree',
-    popularity: 90,
-    rating: 80,
-    tags: ['has gluten, for kids', 'for pasta lovers']
-},{
-    name: 'rice',
-    price: 5,
-    category: 'side',
-    popularity: 30,
-    rating: 50,
-    tags: ['gluten free', 'for entrees']
-},{
-    name: 'corn',
-    price: 6,
-    category: 'side',
-    popularity: 0,
-    rating: 10,
-    tags: ['gluten free', 'side', 'for kids']
-},{
-    name: 'chicken wings',
-    price: 11,
-    category: 'appitizer',
-    popularity: 100,
-    Rating: 90,
-    tags: ['bone in', 'for adults', 'gluten free']
-
-}
+//New Answer:
+let foodArr = [
+    {
+        name: 'Cheese',
+        price: 10.00,
+        category: 'entree',
+        popularity: 5,
+        rating: 5,
+        tags: ['cheesy', 'for kids']
+    },
+    {
+        name: 'Corn',
+        price: 3.00,
+        category: 'side',
+        popularity: 3,
+        rating: 4,
+        tags: ['healthy', 'side']
+    },
+    {
+        name: 'pasta',
+        price: 11.00,
+        category: 'entree',
+        popularity: 5,
+        rating: 3,
+        tags: ['for adults', 'carbs']
+    },
+    {
+        name: 'wings',
+        price: 8.00,
+        category: 'appetizer',
+        popularity: 5,
+        rating: 5,
+        tags: ['meat lovers', 'for everyone']
+    },
+    {
+        name: 'apples',
+        price: 3.00,
+        category: 'fruit',
+        popularity: 5,
+        rating: 2,
+        tags: ['crunchy', 'healthy']
+    },
 ]
+
+
+//Original Answer:
+// let foodArr = [{
+//     name: 'pizza',
+//     price: 10,
+//     category: 'entree',
+//     popularity: 60,
+//     rating: 90,
+//     tags: ['for meat lovers', 'has gluten', 'lots of carbs']
+// },{
+//     name: 'noodles',
+//     price: 8,
+//     category: 'entree',
+//     popularity: 90,
+//     rating: 80,
+//     tags: ['has gluten, for kids', 'for pasta lovers']
+// },{
+//     name: 'rice',
+//     price: 5,
+//     category: 'side',
+//     popularity: 30,
+//     rating: 50,
+//     tags: ['gluten free', 'for entrees']
+// },{
+//     name: 'corn',
+//     price: 6,
+//     category: 'side',
+//     popularity: 0,
+//     rating: 10,
+//     tags: ['gluten free', 'side', 'for kids']
+// },{
+//     name: 'chicken wings',
+//     price: 11,
+//     category: 'appitizer',
+//     popularity: 100,
+//     Rating: 90,
+//     tags: ['bone in', 'for adults', 'gluten free']
+
+// }
+
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -155,11 +232,17 @@ let foodArr = [{
 */
 
 //CODE HERE
+//New Answer:
+const filteredfood = foodArr.filter((foodObj) => foodObj.tags.includes('healthy'))
 
-let filteredFoodFun = foodArr.filter(function(element){
-    return element === 'gluten free'
-})
-console.log(filteredFoodFun)
+console.log(filteredfood)
+
+
+//Original Answer:
+// let filteredFoodFun = foodArr.filter(function(element){
+//     return element === 'gluten free'
+// })
+// console.log(filteredFoodFun)
 
 
 
@@ -205,6 +288,19 @@ console.log(filteredFoodFun)
 */
 
 //CODE HERE
+//New Answer:
+function filterByProperty(property, number, type){
+    let filteredArr = foodArr.filter((foodObj) => {
+        if (type === 'above'){
+            return foodObj[property] > number
+        } else if(type = 'below'){
+            return foodObj[property] < number
+        }
+    })
+    return filteredArr
+}
+
+//Original Answer:
 //ran out of time
 
 /*
@@ -215,4 +311,10 @@ console.log(filteredFoodFun)
 */
 
 //CODE HERE
+//New Answer:
+console.log(filterByProperty('rating', 4, 'below', ))
+
+
+
+//Original Answer:
 //ran out of time
