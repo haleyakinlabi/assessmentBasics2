@@ -53,14 +53,15 @@ let greetUser = (username) => {
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
+
+
 function canWeDeliver(zipCode){
     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
         if (zipCode === deliveryAreaZipCodes[i]){
             return `You're in our delivery zone!`
-        } else {
-            return 'Sorry, we cannot deliver to that address'
-    }
+        }         
 }
+return 'Sorry, we cannot deliver to that address'
 }
     
 
@@ -130,12 +131,14 @@ const deals = [
 */
 
 //CODE HERE
+//New Answer:
+deals[0].title = deals[0].title.replace('15', '10')
+//console.log(deals)
 
 
-
-
-let replace15 = deals.replace('15%', '10%')
-console.log(replace15)
+//Original Answer:
+//let replace15 = deals.replace('15%', '10%')
+//console.log(replace15)
 
 
 
@@ -156,5 +159,7 @@ console.log(replace15)
 */
 
 /////CODE HERE
-
+//New Answer:
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+//console.log(deals)
 
