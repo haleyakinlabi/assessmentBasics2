@@ -20,15 +20,31 @@
 */
 
 //CODE HERE
-class Employee{
+//New Answer:
+class Employee {
     constructor(name, shifts){
         this.name = name
-        this.shifts = shifts
+        this.shifts = shifts 
     }
     getSchedule(){
-        console.log(this.name + ' works on ' + this.shifts)
+        console.log( this.name + ' works on ' + this.shifts)
     }
 }
+
+
+
+
+
+//Original Answer:
+// class Employee{
+//     constructor(name, shifts){
+//         this.name = name
+//         this.shifts = shifts
+//     }
+//     getSchedule(){
+//         console.log(this.name + ' works on ' + this.shifts)
+//     }
+// }
 
 
 
@@ -44,7 +60,14 @@ class Employee{
 */
 
 //CODE HERE
- let empOne = new Employee('Tom', 'Mondays & Firdays')
+//New Answer:
+let empOne = new Employee('Tom', ['Mondays', 'Fridays'])
+
+
+ 
+
+//Original Answer:
+//let empOne = new Employee('Tom', 'Mondays & Firdays')
 
 
 /*
@@ -53,7 +76,14 @@ class Employee{
 */
 
 //CODE HERE
-getSchedule()
+//New Answer:
+empOne.getSchedule()
+
+
+
+
+//Original Answer:
+//getSchedule()
 
 
 /*
@@ -69,7 +99,14 @@ getSchedule()
 */
 
 //CODE HERE
-let empTwo = new Employee('Tom', 'Mondays & Firdays')
+//New Answer:
+
+const empTwo = {...empOne}
+//console.log(empTwo)
+
+
+//Original Answer:
+//let empTwo = new Employee('Tom', 'Mondays & Firdays')
 
 
 
@@ -98,18 +135,37 @@ let empTwo = new Employee('Tom', 'Mondays & Firdays')
 */
 
 //CODE HERE
-class Manager extends Employee{
-    constructor(name,shifts, employees){
+//New Answer:
+class Manager extends Employee {
+    constructor(name, shifts, employees = []){
         super(name, shifts)
-        this.employees = []
+        this.employees = employees
     }
     getEmployees(){
-        console.log(this.name + ' manages ' + this.employees)
+        console.log(this.name + " manages " + this.employees)
     }
-    addEmplyee(emp){
-        this.employees.push()
+    addEmployee(emp){
+        this.employees.push(emp)
     }
+    
 }
+
+
+
+
+//Original Answer:
+// class Manager extends Employee{
+//     constructor(name,shifts, employees){
+//         super(name, shifts)
+//         this.employees = []
+//     }
+//     getEmployees(){
+//         console.log(this.name + ' manages ' + this.employees)
+//     }
+//     addEmplyee(emp){
+//         this.employees.push()
+//     }
+// }
 
 
 
@@ -125,7 +181,19 @@ class Manager extends Employee{
 */
 
 //CODE HERE
-let manager = new Manager('Winston', 'Weekday mornings, weekday afternoons', employees = 'Cece', 'Schmidt')
+//New Answer:
+let empCece = new Employee('Cece', ['Tudesdays', 'Thursdays'])
+let empSchmidt = new Employee('Schmidt', ['Mondays', 'Tuesdays'])
+
+
+
+
+
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
+
+
+//Original Answer:
+//let manager = new Manager('Winston', 'Weekday mornings, weekday afternoons', employees = 'Cece', 'Schmidt')
 
 
 
@@ -135,7 +203,15 @@ let manager = new Manager('Winston', 'Weekday mornings, weekday afternoons', emp
 */
 
 //CODE HERE
-getEmployees()
+//New Answer:
+manager.getEmployees()
+
+
+
+
+
+//Original Answer:
+//getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -144,6 +220,12 @@ getEmployees()
 */
 
 //CODE HERE 
+//New Answer:
+manager.addEmployee('Coach')
+
+
+
+//Original Answer:
 //ran out of time
 /*
     Call the `getEmployees` method on the
@@ -152,4 +234,9 @@ getEmployees()
 */
 
 //CODE HERE
+//New Answer:
+manager.getEmployees()
+
+
+//Original Answer:
 //ran out of time
