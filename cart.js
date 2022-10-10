@@ -34,14 +34,21 @@ const cart = [
 ]
 
 //CODE HERE
-const price = cart.filter(function(element){
-    return element.price
-})
-console.log(price)
+//New Answer:
+const summedPrice = cart.reduce((a, c) => {
+    return a + c.price
+}, 0)
+
+//must have starting accumulator 
+console.log(summedPrice)
+console.log('--------------------------------------------------')
 
 
-
-
+//Original Answer:
+//const price = cart.filter(function(element){
+    //return element.price
+//})
+//console.log(price)
 
 //const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
@@ -62,9 +69,21 @@ console.log(price)
 */
 
 //CODE HERE
-function calcFinalPrice(cartTotal, couponValue, tax){
+//New Answer:
 
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return cartTotal + (cartTotal * tax) - couponValue
 }
+console.log(calcFinalPrice(10, 2, 0.5))
+
+
+
+
+
+//Original Answer:
+//function calcFinalPrice(cartTotal, couponValue, tax){
+
+//}
 
 
 
@@ -90,7 +109,10 @@ function calcFinalPrice(cartTotal, couponValue, tax){
 
 /*
     TEXT ANSWER HERE
-
+    name: (string), orders need a name to identify the customer
+    addres: (string), need address to send order
+    phone: (number), needed to contact customer about order
+    wantMarketingEmails: (boolean), needed to know if the customer is interested in deals
 */
 
 /*
@@ -99,4 +121,19 @@ function calcFinalPrice(cartTotal, couponValue, tax){
 */
 
 //CODE HERE
+//New Answer:
+let custObj ={
+    name: 'Nate',
+    address: '3445 whatever St, Salt Lake, Ut 86009',
+    phone: 8015567653,
+    wantMarketingEmails: false
+}
+
+
+
+
+
+
+
+//Original Answer:
 //ran out of time
